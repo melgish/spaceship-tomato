@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when there is no data > should render 1`] = `
+<div>
+  <section>
+    <header>
+      <div>
+        Home
+      </div>
+    </header>
+  </section>
+</div>
+`;

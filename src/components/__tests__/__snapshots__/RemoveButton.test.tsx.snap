@@ -1,0 +1,12 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render 1`] = `
+<div>
+  <button
+    class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+    type="button"
+  >
+    Remove
+  </button>
+</div>
+`;

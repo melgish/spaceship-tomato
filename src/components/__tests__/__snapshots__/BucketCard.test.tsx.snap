@@ -1,0 +1,65 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when bucket does not hold a plant > should render without plant info 1`] = `
+<div>
+  <div
+    class="kv-card"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      Test Bucket
+       
+      <button
+        class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+    <div>
+      Plant
+    </div>
+    <div>
+      [none]
+    </div>
+  </div>
+</div>
+`;
+
+exports[`when bucket holds a plant > should render with plant info 1`] = `
+<div>
+  <div
+    class="kv-card"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      Test Bucket
+       
+      <button
+        class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+    <div>
+      Plant
+    </div>
+    <div>
+      Test Plant
+    </div>
+    <div>
+      PH
+    </div>
+    <div>
+      6.1
+       – 
+      7.2
+    </div>
+  </div>
+</div>
+`;

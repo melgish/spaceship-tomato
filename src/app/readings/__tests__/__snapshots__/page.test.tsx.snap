@@ -1,0 +1,236 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when there is bucket data > should render data 1`] = `
+<div>
+  <section>
+    <header>
+      <div>
+        Readings
+      </div>
+    </header>
+    <form
+      class="flex gap-x-3"
+      novalidate=""
+    >
+      <div
+        class="required field"
+      >
+        <label
+          for=":r1:-bucketId"
+        >
+          Bucket
+        </label>
+        <select
+          class="py-1.5"
+          id=":r1:-bucketId"
+          name="bucketId"
+          style="width: 20ch;"
+        >
+          <option
+            value="0"
+          >
+            None
+          </option>
+          <option
+            value="1"
+          >
+            Test Bucket
+          </option>
+        </select>
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r1:-ph"
+        >
+          PH
+        </label>
+        <input
+          id=":r1:-ph"
+          max="14"
+          min="0"
+          name="ph"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r1:-ec"
+        >
+          EC (µS/cm)
+        </label>
+        <input
+          id=":r1:-ec"
+          max="14"
+          min="0"
+          name="ec"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r1:-tds"
+        >
+          TDS (ppm)
+        </label>
+        <input
+          id=":r1:-tds"
+          max="14"
+          min="0"
+          name="tds"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="flex items-center gap-x-2"
+      >
+        <button
+          class="emerald"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          class="slate"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+    <div />
+  </section>
+</div>
+`;
+
+exports[`when there is no data > should render 1`] = `
+<div>
+  <section>
+    <header>
+      <div>
+        Readings
+      </div>
+    </header>
+    <form
+      class="flex gap-x-3"
+      novalidate=""
+    >
+      <div
+        class="required field"
+      >
+        <label
+          for=":r0:-bucketId"
+        >
+          Bucket
+        </label>
+        <select
+          class="py-1.5"
+          id=":r0:-bucketId"
+          name="bucketId"
+          style="width: 20ch;"
+        >
+          <option
+            value="0"
+          >
+            None
+          </option>
+        </select>
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r0:-ph"
+        >
+          PH
+        </label>
+        <input
+          id=":r0:-ph"
+          max="14"
+          min="0"
+          name="ph"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r0:-ec"
+        >
+          EC (µS/cm)
+        </label>
+        <input
+          id=":r0:-ec"
+          max="14"
+          min="0"
+          name="ec"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="required field"
+      >
+        <label
+          for=":r0:-tds"
+        >
+          TDS (ppm)
+        </label>
+        <input
+          id=":r0:-tds"
+          max="14"
+          min="0"
+          name="tds"
+          placeholder="Ex. 7.0"
+          required=""
+          size="10"
+          step=".1"
+          type="number"
+        />
+      </div>
+      <div
+        class="flex items-center gap-x-2"
+      >
+        <button
+          class="emerald"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          class="slate"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+    <div />
+  </section>
+</div>
+`;

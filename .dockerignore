@@ -1,0 +1,8 @@
+.git
+.next
+.vscode
+database
+node_modules
+.env
+npm-debug.log
+README.md

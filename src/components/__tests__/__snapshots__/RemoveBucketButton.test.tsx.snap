@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when row is not supplied > should not render 1`] = `<div />`;
+
+exports[`when row is supplied > should render 1`] = `
+<div>
+  <button
+    class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+    type="button"
+  >
+    Remove
+  </button>
+</div>
+`;

@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when input is not valid > should resolve to a failure 1`] = `
+{
+  "message": "Failed to create plant",
+  "ok": false,
+}
+`;
+
+exports[`when input is valid > should resolve with success 1`] = `
+{
+  "data": {
+    "id": 1,
+    "maxPH": 8,
+    "minPH": 5,
+    "name": "Fred the Tomato",
+  },
+  "message": "Plant created",
+  "ok": true,
+}
+`;

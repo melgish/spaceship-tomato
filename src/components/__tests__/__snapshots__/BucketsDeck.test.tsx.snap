@@ -1,0 +1,22 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when there are no readings > should render an empty div 1`] = `
+<div>
+  <div />
+</div>
+`;
+
+exports[`when there are readings > should render a card for each reading 1`] = `
+<div>
+  <div
+    class="test"
+  >
+    <div>
+      1
+    </div>
+    <div>
+      2
+    </div>
+  </div>
+</div>
+`;

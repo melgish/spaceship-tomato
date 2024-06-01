@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should display the supplied plant 1`] = `
+<div>
+  <div
+    class="kv-card"
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      Test Plant
+       
+      <button
+        class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+    <div>
+      PH
+    </div>
+    <div>
+      6.0
+       – 
+      7.0
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when input is not valid > should resolve to a failure 1`] = `
+{
+  "message": "Failed to create reading",
+  "ok": false,
+}
+`;
+
+exports[`when input is valid > should resolve with success 1`] = `
+{
+  "data": {
+    "bucketId": 1,
+    "createdAt": 2024-06-13T10:12:34.045Z,
+    "ec": 1234,
+    "id": 1,
+    "ph": 6.5,
+    "tds": 805,
+  },
+  "message": "Reading created",
+  "ok": true,
+}
+`;

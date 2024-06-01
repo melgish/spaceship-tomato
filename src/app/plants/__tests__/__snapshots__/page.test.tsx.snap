@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when there is no data > should render 1`] = `
+<div>
+  <section>
+    <header>
+      <div>
+        Buckets
+      </div>
+    </header>
+    <form
+      class="flex gap-x-3"
+      novalidate=""
+    >
+      <div
+        class="required field"
+      >
+        <label
+          for=":r0:-name"
+        >
+          Name
+        </label>
+        <input
+          autocomplete="off"
+          id=":r0:-name"
+          maxlength="24"
+          name="name"
+          placeholder="Ex. #1"
+          required=""
+          size="24"
+          type="text"
+        />
+      </div>
+      <div
+        class="field"
+      >
+        <label
+          for=":r0:-plantId"
+        >
+          Plant
+        </label>
+        <select
+          class="py-1.5"
+          id=":r0:-plantId"
+          name="plantId"
+          style="width: 32ch;"
+        >
+          <option
+            value="0"
+          >
+            None
+          </option>
+        </select>
+      </div>
+      <div
+        class="flex items-center gap-x-2"
+      >
+        <button
+          class="emerald"
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          class="slate"
+          type="button"
+        >
+          Clear
+        </button>
+      </div>
+    </form>
+    <div
+      class="mt-2"
+    />
+  </section>
+</div>
+`;

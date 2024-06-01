@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when error has no message > should not render unexpected 1`] = `
+<div>
+  <div
+    class="error text-rose-800"
+  >
+    Unexpected
+  </div>
+</div>
+`;
+
+exports[`when there is an array of errors > should not render the first item 1`] = `
+<div>
+  <div
+    class="error text-rose-800"
+  >
+    Error
+  </div>
+</div>
+`;
+
+exports[`when there is no error > should not render content 1`] = `<div />`;

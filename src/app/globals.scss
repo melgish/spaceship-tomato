@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-synthesis: none;
+  padding: 1rem;
+}
+
+@layer base {
+  dialog {
+    @apply border-2 border-black rounded-lg;
+    @apply shadow-lg;
+    @apply p-2;
+    margin-top: 4rem;
+  }
+
+  label {
+    @apply block font-bold;
+  }
+
+  input,
+  select {
+    @apply border border-slate-400 rounded-md;
+    @apply px-2 py-1;
+    @apply shadow;
+  }
+
+  .field {
+    &.required label:after {
+      content: '*';
+      @apply text-red-800 font-bold;
+    }
+    input:last-child,
+    select:last-child {
+      @apply mb-6;
+    }
+  }
+
+  section {
+    > header {
+      @apply flex gap-x-2;
+      grid-template-columns: 1fr auto;
+      > :first-child {
+        @apply grow text-2xl;
+      }
+      @apply border-b-2 border-b-slate-400;
+      @apply p-1 mb-1;
+    }
+    > footer {
+      @apply flex gap-x-2 justify-end;
+      @apply p-1 mt-1;
+      @apply border-t-2 border-t-slate-400;
+    }
+  }
+
+  button {
+    @apply border rounded-md px-2 py-1;
+  }
+
+  button.emerald {
+    @apply bg-emerald-200 hover:bg-emerald-700;
+    @apply border-emerald-700;
+    @apply hover:text-white;
+    @apply font-bold;
+  }
+
+  button.slate {
+    @apply bg-slate-200 hover:bg-slate-700;
+    @apply border-slate-700;
+    @apply hover:text-white;
+    @apply font-bold;
+  }
+
+  .kv-card {
+    @apply grid gap-x-2;
+    grid-template-columns: auto 1fr;
+    @apply border border-slate-400 rounded-md;
+    @apply px-2 py-1 mb-2;
+    @apply shadow-md;
+    > :nth-child(odd) {
+      font-weight: bold;
+      text-align: end;
+    }
+    @apply bg-slate-100;
+  }
+}

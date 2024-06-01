@@ -1,0 +1,14 @@
+-- CreateTable
+CREATE TABLE `Reading` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    `ph` DOUBLE NOT NULL,
+    `tds` DOUBLE NOT NULL,
+    `ec` DOUBLE NOT NULL,
+    `bucketId` INTEGER NOT NULL,
+
+    PRIMARY KEY (`id`)
+) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- AddForeignKey
+ALTER TABLE `Reading` ADD CONSTRAINT `Reading_bucketId_fkey` FOREIGN KEY (`bucketId`) REFERENCES `Bucket`(`id`) ON DELETE RESTRICT ON UPDATE CASCADE;

@@ -1,0 +1,234 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should render 1`] = `
+<div>
+  <form
+    class="flex gap-x-3"
+    novalidate=""
+  >
+    <div
+      class="required field"
+    >
+      <label
+        for=":r0:-name"
+      >
+        Name
+      </label>
+      <input
+        autocomplete="off"
+        id=":r0:-name"
+        maxlength="24"
+        name="name"
+        placeholder="Ex. #1"
+        required=""
+        size="24"
+        type="text"
+      />
+    </div>
+    <div
+      class="field"
+    >
+      <label
+        for=":r0:-plantId"
+      >
+        Plant
+      </label>
+      <select
+        class="py-1.5"
+        id=":r0:-plantId"
+        name="plantId"
+        style="width: 32ch;"
+      >
+        <option
+          value="0"
+        >
+          None
+        </option>
+        <option
+          value="1"
+        >
+          Test Plant 1
+        </option>
+        <option
+          value="2"
+        >
+          Test Plant 2
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex items-center gap-x-2"
+    >
+      <button
+        class="emerald"
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        class="slate"
+        type="button"
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`when invalid and submit is clicked > should report validation errors 1`] = `
+<div>
+  <form
+    class="flex gap-x-3"
+    novalidate=""
+  >
+    <div
+      class="required field"
+    >
+      <label
+        for=":r1:-name"
+      >
+        Name
+      </label>
+      <input
+        autocomplete="off"
+        id=":r1:-name"
+        maxlength="24"
+        name="name"
+        placeholder="Ex. #1"
+        required=""
+        size="24"
+        type="text"
+      />
+      <div
+        class="error text-rose-800"
+      >
+        Name is required
+      </div>
+    </div>
+    <div
+      class="field"
+    >
+      <label
+        for=":r1:-plantId"
+      >
+        Plant
+      </label>
+      <select
+        class="py-1.5"
+        id=":r1:-plantId"
+        name="plantId"
+        style="width: 32ch;"
+      >
+        <option
+          value="0"
+        >
+          None
+        </option>
+        <option
+          value="1"
+        >
+          Test Plant 1
+        </option>
+        <option
+          value="2"
+        >
+          Test Plant 2
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex items-center gap-x-2"
+    >
+      <button
+        class="emerald"
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        class="slate"
+        type="button"
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`when valid and submit is clicked > should submit data 1`] = `
+<div>
+  <form
+    class="flex gap-x-3"
+    novalidate=""
+  >
+    <div
+      class="required field"
+    >
+      <label
+        for=":r2:-name"
+      >
+        Name
+      </label>
+      <input
+        autocomplete="off"
+        id=":r2:-name"
+        maxlength="24"
+        name="name"
+        placeholder="Ex. #1"
+        required=""
+        size="24"
+        type="text"
+      />
+    </div>
+    <div
+      class="field"
+    >
+      <label
+        for=":r2:-plantId"
+      >
+        Plant
+      </label>
+      <select
+        class="py-1.5"
+        id=":r2:-plantId"
+        name="plantId"
+        style="width: 32ch;"
+      >
+        <option
+          value="0"
+        >
+          None
+        </option>
+        <option
+          value="1"
+        >
+          Test Plant 1
+        </option>
+        <option
+          value="2"
+        >
+          Test Plant 2
+        </option>
+      </select>
+    </div>
+    <div
+      class="flex items-center gap-x-2"
+    >
+      <button
+        class="emerald"
+        type="submit"
+      >
+        Submit
+      </button>
+      <button
+        class="slate"
+        type="button"
+      >
+        Clear
+      </button>
+    </div>
+  </form>
+</div>
+`;

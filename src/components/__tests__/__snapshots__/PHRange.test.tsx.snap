@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when range is not supplied > should return falsy value 1`] = `<div />`;
+
+exports[`when range is valid > should render range 1`] = `
+<div>
+  6.4
+   – 
+  8.2
+</div>
+`;

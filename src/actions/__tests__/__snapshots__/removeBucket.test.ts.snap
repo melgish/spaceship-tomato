@@ -1,0 +1,16 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`when bucket is in the database > should return a result 1`] = `
+{
+  "data": 1,
+  "message": "Bucket deleted",
+  "ok": true,
+}
+`;
+
+exports[`when bucket is not in database > should return a result 1`] = `
+{
+  "message": "Failed to remove bucket",
+  "ok": false,
+}
+`;

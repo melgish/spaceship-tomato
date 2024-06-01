@@ -1,0 +1,54 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should display the supplied reading 1`] = `
+<div>
+  <div
+    class="kv-card"
+  >
+    <div>
+      Created
+    </div>
+    <div>
+      6/13/2024, 6:12:34 AM
+       
+      <button
+        class="px-1 py-0 text-red-800 font-bold border-red-800 text-sm"
+        type="button"
+      >
+        Remove
+      </button>
+    </div>
+    <div>
+      Bucket
+    </div>
+    <div>
+      Test Bucket
+    </div>
+    <div>
+      Plant
+    </div>
+    <div>
+      Test Plant
+    </div>
+    <div>
+      PH
+    </div>
+    <div>
+      6.5
+    </div>
+    <div>
+      TDS
+    </div>
+    <div>
+      805
+    </div>
+    <div>
+      EC
+    </div>
+    <div>
+      1234
+    </div>
+    <div />
+  </div>
+</div>
+`;

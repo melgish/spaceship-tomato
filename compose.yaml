@@ -1,0 +1,33 @@
+services:
+  tomato-db:
+    container_name: 'tomato-db'
+    env_file: ./.env
+    environment:
+      MYSQL_ROOT_PASSWORD: "ChangeThisWeakPassword!"
+    healthcheck:
+      interval: 10s
+      retries: 2
+      test: [ "CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      timeout: 10s
+    image: mariadb:latest
+    # port exposed for dev access. Not necessary otherwise.
+    ports:
+      - "${MYSQL_TCP_PORT}:${MYSQL_TCP_PORT}"
+    user: 1000:1000
+    volumes:
+      - ./.data:/var/lib/mysql
+
+  tomato-ui:
+    build: .
+    container_name: 'tomato-ui'
+    depends_on:
+      tomato-db:
+        condition: service_healthy
+    env_file: ./.env
+    environment:
+      # Override development values from the .env file
+      DATABASE_AUTO_MIGRATE: "true"
+      DATABASE_URL: "mysql://${MYSQL_USER}:${MYSQL_PASSWORD}@tomato-db:${MYSQL_TCP_PORT}/${MYSQL_DATABASE}"
+    image: "127.0.0.1/libarary/spaceship-tomato:dev"
+    ports:
+      - "3000:3000"
