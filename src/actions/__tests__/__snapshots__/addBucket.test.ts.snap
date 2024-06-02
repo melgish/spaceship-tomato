@@ -19,13 +19,6 @@ exports[`when input is not valid > should resolve to a failure 1`] = `
 }
 `;
 
-exports[`when input is not valid > should resolve to a failure 2`] = `
-{
-  "message": "Failed to create bucket",
-  "ok": false,
-}
-`;
-
 exports[`when input is valid > should resolve with success 1`] = `
 {
   "data": {
