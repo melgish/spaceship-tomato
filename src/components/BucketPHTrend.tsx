@@ -54,10 +54,7 @@ export default function BucketPHTrend({ bucket }: Props) {
       textAnchor="middle"
     >
       <g transform={`translate(${margin.left},${margin.bottom})`}>
-        <g
-          className="x axis"
-          transform={`translate(0, ${height})`}
-        >
+        <g className="x axis" transform={`translate(0, ${height})`}>
           <path d={`M0,6V0H${width}V6`} fill="none" />
           {xTicks.map(([label, x]) => (
             <g key={x} className="tick" transform={`translate(${x}, 0)`}>
@@ -68,14 +65,12 @@ export default function BucketPHTrend({ bucket }: Props) {
             </g>
           ))}
         </g>
-        <g
-          className="y axis"
-          textAnchor="end">
+        <g className="y axis" textAnchor="end">
           <path d={`M-6,${height}H0V0H-6`} fill="none" />
           {yTicks.map(([label, y]) => (
             <g key={y} className="tick" transform={`translate(0, ${y})`}>
               <line x2={-6} />
-              <text dy="0.32em" stroke="none" x={-9} >
+              <text dy="0.32em" stroke="none" x={-9}>
                 {label}
               </text>
             </g>
