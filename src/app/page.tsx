@@ -11,7 +11,7 @@ export default async function Home() {
       <header>
         <div>Home</div>
       </header>
-      <div className="grid grid-cols-2">
+      <div className="flex flex-wrap justify-around gap-y-2">
         {buckets.map((b) => (
           <div key={b.id}>
             <div>

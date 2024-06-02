@@ -3,10 +3,11 @@
 exports[`When bucket has no readings > should render 1`] = `
 <div>
   <svg
-    class="ph-trend"
     font-family="sans-serif"
     font-size="10"
     height="156"
+    stroke="currentColor"
+    text-anchor="middle"
     width="348"
   >
     <g
@@ -14,38 +15,31 @@ exports[`When bucket has no readings > should render 1`] = `
     >
       <g
         class="x axis"
-        fill="none"
-        text-anchor="middle"
         transform="translate(0, 120)"
       >
         <path
-          class="domain"
           d="M0,6V0H300V6"
-          stroke="currentColor"
+          fill="none"
         />
       </g>
       <g
         class="y axis"
-        fill="none"
         text-anchor="end"
       >
         <path
-          class="domain"
           d="M-6,120H0V0H-6"
-          stroke="currentColor"
+          fill="none"
         />
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 120)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             5.0
@@ -53,16 +47,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 100)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             5.5
@@ -70,16 +62,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 80.00000000000001)"
+          transform="translate(0, 80)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             6.0
@@ -87,16 +77,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 60)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             6.5
@@ -104,16 +92,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 40.00000000000001)"
+          transform="translate(0, 40)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             7.0
@@ -121,16 +107,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 19.999999999999996)"
+          transform="translate(0, 20)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             7.5
@@ -138,16 +122,14 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 0)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             8.0
@@ -155,22 +137,25 @@ exports[`When bucket has no readings > should render 1`] = `
         </g>
       </g>
       <g
+        class="bands"
         opacity="0.3"
+        stroke="none"
       >
         <path
-          d="M0 96.00000000000001V76.00000000000003H300V96.00000000000001Z"
+          d="M0 96V76H300V96Z"
           fill="#EE0"
         />
         <path
-          d="M0 19.999999999999996V40.00000000000001H300V19.999999999999996Z"
+          d="M0 20V40H300V20Z"
           fill="#EE0"
         />
         <path
-          d="M0 76.00000000000003V40.00000000000001H300V76.00000000000003Z"
+          d="M0 76V40H300V76Z"
           fill="#0E0"
         />
       </g>
       <g
+        class="data"
         fill="forestgreen"
         stroke="forestgreen"
       >
@@ -179,13 +164,17 @@ exports[`When bucket has no readings > should render 1`] = `
           stroke-width="2"
         />
       </g>
-      <text
-        text-anchor="middle"
-        x="150"
-        y="60"
+      <g
+        class="no-data"
       >
-        No Data To Display
-      </text>
+        <text
+          stroke="none"
+          x="150"
+          y="60"
+        >
+          No Data To Display
+        </text>
+      </g>
     </g>
   </svg>
 </div>
@@ -194,10 +183,11 @@ exports[`When bucket has no readings > should render 1`] = `
 exports[`When bucket has readings > should render 1`] = `
 <div>
   <svg
-    class="ph-trend"
     font-family="sans-serif"
     font-size="10"
     height="156"
+    stroke="currentColor"
+    text-anchor="middle"
     width="348"
   >
     <g
@@ -205,27 +195,22 @@ exports[`When bucket has readings > should render 1`] = `
     >
       <g
         class="x axis"
-        fill="none"
-        text-anchor="middle"
         transform="translate(0, 120)"
       >
         <path
-          class="domain"
           d="M0,6V0H300V6"
-          stroke="currentColor"
+          fill="none"
         />
         <g
           class="tick"
-          opacity="1"
           transform="translate(150, 0)"
         >
           <line
-            stroke="currentColor"
             y2="6"
           />
           <text
             dy="0.7em"
-            fill="currentColor"
+            stroke="none"
             y="9"
           >
             Jun 02
@@ -234,26 +219,22 @@ exports[`When bucket has readings > should render 1`] = `
       </g>
       <g
         class="y axis"
-        fill="none"
         text-anchor="end"
       >
         <path
-          class="domain"
           d="M-6,120H0V0H-6"
-          stroke="currentColor"
+          fill="none"
         />
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 120)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             5.0
@@ -261,16 +242,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 100)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             5.5
@@ -278,16 +257,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 80.00000000000001)"
+          transform="translate(0, 80)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             6.0
@@ -295,16 +272,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 60)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             6.5
@@ -312,16 +287,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 40.00000000000001)"
+          transform="translate(0, 40)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             7.0
@@ -329,16 +302,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
-          transform="translate(0, 19.999999999999996)"
+          transform="translate(0, 20)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             7.5
@@ -346,16 +317,14 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
         <g
           class="tick"
-          opacity="1"
           transform="translate(0, 0)"
         >
           <line
-            stroke="currentColor"
             x2="-6"
           />
           <text
             dy="0.32em"
-            fill="currentColor"
+            stroke="none"
             x="-9"
           >
             8.0
@@ -363,22 +332,25 @@ exports[`When bucket has readings > should render 1`] = `
         </g>
       </g>
       <g
+        class="bands"
         opacity="0.3"
+        stroke="none"
       >
         <path
-          d="M0 96.00000000000001V76.00000000000003H300V96.00000000000001Z"
+          d="M0 96V76H300V96Z"
           fill="#EE0"
         />
         <path
-          d="M0 19.999999999999996V40.00000000000001H300V19.999999999999996Z"
+          d="M0 20V40H300V20Z"
           fill="#EE0"
         />
         <path
-          d="M0 76.00000000000003V40.00000000000001H300V76.00000000000003Z"
+          d="M0 76V40H300V76Z"
           fill="#0E0"
         />
       </g>
       <g
+        class="data"
         fill="forestgreen"
         stroke="forestgreen"
       >
