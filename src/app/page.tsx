@@ -1,18 +1,25 @@
-import { findBuckets, type Bucket } from '@/actions/findBuckets'
-import AddReadingForm from '@/components/AddReadingForm'
+import { findBuckets } from '@/actions/findBuckets'
+import BucketPHTrend from '@/components/BucketPHTrend'
 
 export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   const buckets = await findBuckets()
+
   return (
     <section>
       <header>
         <div>Home</div>
       </header>
-      {buckets.map((b: Bucket) => (
-        <AddReadingForm key={b.id} buckets={buckets} bucketId={b.id} />
+      <div className="grid grid-cols-2">
+      {buckets.map((b) => (
+        <div key={b.id} >
+          <div>Bucket: {b.name} {b.plant?.name}</div>
+          <BucketPHTrend bucket={b} />
+        </div>
       ))}
+      </div>
+
     </section>
   )
 }

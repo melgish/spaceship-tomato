@@ -18,15 +18,15 @@ model Plant {
   name   String   @unique
   minPH  Float
   maxPH  Float
-  Bucket Bucket[]
+  bucket Bucket[]
 }
 
 model Bucket {
-  id      Int       @id @default(autoincrement())
-  name    String    @unique
-  plant   Plant?    @relation(fields: [plantId], references: [id])
-  plantId Int?
-  Reading Reading[]
+  id       Int       @id @default(autoincrement())
+  name     String    @unique
+  plant    Plant?    @relation(fields: [plantId], references: [id])
+  plantId  Int?
+  readings Reading[]
 }
 
 model Reading {

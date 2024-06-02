@@ -1,0 +1,399 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`When bucket has no readings > should render 1`] = `
+<div>
+  <svg
+    class="ph-trend"
+    font-family="sans-serif"
+    font-size="10"
+    height="156"
+    width="348"
+  >
+    <g
+      transform="translate(36,12)"
+    >
+      <g
+        class="x axis"
+        fill="none"
+        text-anchor="middle"
+        transform="translate(0, 120)"
+      >
+        <path
+          class="domain"
+          d="M0,6V0H300V6"
+          stroke="currentColor"
+        />
+      </g>
+      <g
+        class="y axis"
+        fill="none"
+        text-anchor="end"
+      >
+        <path
+          class="domain"
+          d="M-6,120H0V0H-6"
+          stroke="currentColor"
+        />
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 120)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            5.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 100)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            5.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 80.00000000000001)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            6.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 60)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            6.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 40.00000000000001)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            7.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 19.999999999999996)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            7.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 0)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            8.0
+          </text>
+        </g>
+      </g>
+      <g
+        opacity="0.3"
+      >
+        <path
+          d="M0 96.00000000000001V76.00000000000003H300V96.00000000000001Z"
+          fill="#EE0"
+        />
+        <path
+          d="M0 19.999999999999996V40.00000000000001H300V19.999999999999996Z"
+          fill="#EE0"
+        />
+        <path
+          d="M0 76.00000000000003V40.00000000000001H300V76.00000000000003Z"
+          fill="#0E0"
+        />
+      </g>
+      <g
+        fill="forestgreen"
+        stroke="forestgreen"
+      >
+        <path
+          fill="none"
+          stroke-width="2"
+        />
+      </g>
+      <text
+        text-anchor="middle"
+        x="150"
+        y="60"
+      >
+        No Data To Display
+      </text>
+    </g>
+  </svg>
+</div>
+`;
+
+exports[`When bucket has readings > should render 1`] = `
+<div>
+  <svg
+    class="ph-trend"
+    font-family="sans-serif"
+    font-size="10"
+    height="156"
+    width="348"
+  >
+    <g
+      transform="translate(36,12)"
+    >
+      <g
+        class="x axis"
+        fill="none"
+        text-anchor="middle"
+        transform="translate(0, 120)"
+      >
+        <path
+          class="domain"
+          d="M0,6V0H300V6"
+          stroke="currentColor"
+        />
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(150, 0)"
+        >
+          <line
+            stroke="currentColor"
+            y2="6"
+          />
+          <text
+            dy="0.7em"
+            fill="currentColor"
+            y="9"
+          >
+            Jun 02
+          </text>
+        </g>
+      </g>
+      <g
+        class="y axis"
+        fill="none"
+        text-anchor="end"
+      >
+        <path
+          class="domain"
+          d="M-6,120H0V0H-6"
+          stroke="currentColor"
+        />
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 120)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            5.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 100)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            5.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 80.00000000000001)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            6.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 60)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            6.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 40.00000000000001)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            7.0
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 19.999999999999996)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            7.5
+          </text>
+        </g>
+        <g
+          class="tick"
+          opacity="1"
+          transform="translate(0, 0)"
+        >
+          <line
+            stroke="currentColor"
+            x2="-6"
+          />
+          <text
+            dy="0.32em"
+            fill="currentColor"
+            x="-9"
+          >
+            8.0
+          </text>
+        </g>
+      </g>
+      <g
+        opacity="0.3"
+      >
+        <path
+          d="M0 96.00000000000001V76.00000000000003H300V96.00000000000001Z"
+          fill="#EE0"
+        />
+        <path
+          d="M0 19.999999999999996V40.00000000000001H300V19.999999999999996Z"
+          fill="#EE0"
+        />
+        <path
+          d="M0 76.00000000000003V40.00000000000001H300V76.00000000000003Z"
+          fill="#0E0"
+        />
+      </g>
+      <g
+        fill="forestgreen"
+        stroke="forestgreen"
+      >
+        <path
+          d="M150,68Z"
+          fill="none"
+          stroke-width="2"
+        />
+        <circle
+          cx="150"
+          cy="68"
+          r="4"
+        />
+      </g>
+    </g>
+  </svg>
+</div>
+`;

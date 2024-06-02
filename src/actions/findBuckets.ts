@@ -8,7 +8,13 @@ import { prisma } from '@/lib/prisma'
  */
 export async function findBuckets() {
   return await prisma.bucket.findMany({
-    include: { plant: true },
+    include: {
+      plant: true,
+      readings: {
+        orderBy: [{ createdAt: 'desc' }],
+        take: 7,
+      },
+    },
     orderBy: [{ name: 'asc' }],
   })
 }
