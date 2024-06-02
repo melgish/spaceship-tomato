@@ -1,6 +1,25 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`when input includes plant > should resolve with success 1`] = `
+{
+  "data": {
+    "id": 1,
+    "name": "Empty Bucket",
+    "plantId": 0,
+  },
+  "message": "Bucket created",
+  "ok": true,
+}
+`;
+
 exports[`when input is not valid > should resolve to a failure 1`] = `
+{
+  "message": "Failed to create bucket",
+  "ok": false,
+}
+`;
+
+exports[`when input is not valid > should resolve to a failure 2`] = `
 {
   "message": "Failed to create bucket",
   "ok": false,
@@ -16,5 +35,19 @@ exports[`when input is valid > should resolve with success 1`] = `
   },
   "message": "Bucket created",
   "ok": true,
+}
+`;
+
+exports[`when input name is duplicate > should resolve to a failure 1`] = `
+{
+  "message": "Failed to create bucket",
+  "ok": false,
+}
+`;
+
+exports[`when plant does not exist > should resolve to a failure 1`] = `
+{
+  "message": "Failed to create bucket",
+  "ok": false,
 }
 `;
