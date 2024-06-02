@@ -1,7 +1,7 @@
 import type { Bucket } from '@/actions/findBuckets'
-import * as d3 from "d3"
+import * as d3 from 'd3'
 
-type Reading = Required<Bucket["readings"][number]>
+type Reading = Required<Bucket['readings'][number]>
 type Props = Readonly<{
   bucket: Bucket
 }>
@@ -9,22 +9,22 @@ type Props = Readonly<{
 export default function BucketPHTrend({ bucket }: Props) {
   const data = bucket.readings
 
-  const width = 300;
-  const height = 120;
+  const width = 300
+  const height = 120
   const margin = { top: 24, right: 12, bottom: 12, left: 36 }
 
   // Y scale based on fixed PH range
   // Generate y axis ticks. [label, value]
   const yDomain = [5, 8]
   const yScale = d3.scaleLinear().domain(yDomain).range([height, 0])
-  const yTicks = yScale.ticks(9).map(d => [d.toFixed(1), yScale(d)])
+  const yTicks = yScale.ticks(9).map((d) => [d.toFixed(1), yScale(d)])
 
   // X scale changes based on measurement dates.
   // Generate x axis ticks. [label, value]
   const xDomain = d3.extent(data, (d) => d.createdAt!) as [Date, Date]
   const xScale = d3.scaleTime().domain(xDomain).range([0, width])
-  const timeFormat = xScale.tickFormat(8, "%b %d");
-  const xTicks = xScale.ticks(8).map(d => [timeFormat(d), xScale(d)])
+  const timeFormat = xScale.tickFormat(8, '%b %d')
+  const xTicks = xScale.ticks(8).map((d) => [timeFormat(d), xScale(d)])
 
   const line = d3
     .line<Reading>()
@@ -61,7 +61,9 @@ export default function BucketPHTrend({ bucket }: Props) {
           {xTicks.map(([label, x]) => (
             <g key={x} className="tick" opacity={1} transform={`translate(${x}, 0)`}>
               <line y2={6} stroke="currentColor" />
-              <text y={9} dy="0.7em" fill="currentColor">{label}</text>
+              <text y={9} dy="0.7em" fill="currentColor">
+                {label}
+              </text>
             </g>
           ))}
         </g>
@@ -70,7 +72,9 @@ export default function BucketPHTrend({ bucket }: Props) {
           {yTicks.map(([label, y]) => (
             <g key={y} className="tick" opacity={1} transform={`translate(0, ${y})`}>
               <line x2={-6} stroke="currentColor" />
-              <text fill="currentColor" x={-9} dy="0.32em">{label}</text>
+              <text fill="currentColor" x={-9} dy="0.32em">
+                {label}
+              </text>
             </g>
           ))}
         </g>
@@ -88,7 +92,7 @@ export default function BucketPHTrend({ bucket }: Props) {
           ))}
         </g>
         {data.length === 0 && (
-          <text y={height / 2} x={width / 2} textAnchor='middle'>
+          <text y={height / 2} x={width / 2} textAnchor="middle">
             No Data To Display
           </text>
         )}

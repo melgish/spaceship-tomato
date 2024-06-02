@@ -13,7 +13,7 @@ const data = {
     maxPH: 7.2,
     minPH: 6.1,
   },
-  readings: []
+  readings: [],
 }
 
 describe('when bucket holds a plant', () => {

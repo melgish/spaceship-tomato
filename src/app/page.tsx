@@ -12,14 +12,15 @@ export default async function Home() {
         <div>Home</div>
       </header>
       <div className="grid grid-cols-2">
-      {buckets.map((b) => (
-        <div key={b.id} >
-          <div>Bucket: {b.name} {b.plant?.name}</div>
-          <BucketPHTrend bucket={b} />
-        </div>
-      ))}
+        {buckets.map((b) => (
+          <div key={b.id}>
+            <div>
+              Bucket: {b.name} {b.plant?.name}
+            </div>
+            <BucketPHTrend bucket={b} />
+          </div>
+        ))}
       </div>
-
     </section>
   )
 }
