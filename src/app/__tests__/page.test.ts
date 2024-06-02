@@ -6,7 +6,15 @@ import HomePage from '@/app/page'
 vi.mock('@/actions/findBuckets')
 
 beforeEach(() => {
-  ;(findBuckets as Mock).mockResolvedValue([])
+  ;(findBuckets as Mock).mockResolvedValue([
+    {
+      id: 1,
+      name: 'Test Bucket',
+      plant: { id: 1, name: 'Test Plant', minPH: 6.1, maxPH: 7.0 },
+      plantId: 1,
+      readings: [],
+    },
+  ])
 })
 
 describe('when there is no data', () => {
@@ -15,4 +23,3 @@ describe('when there is no data', () => {
     expect(container).toMatchSnapshot()
   })
 })
-

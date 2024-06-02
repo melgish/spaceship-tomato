@@ -21,8 +21,8 @@ describe('when there is no data', () => {
 
 describe('when there is bucket data', () => {
   it('should render data', async () => {
-    ; (findBuckets as Mock).mockResolvedValue([
-      { id: 1, name: 'Test Bucket', plantId: 0, plant: null }
+    ;(findBuckets as Mock).mockResolvedValue([
+      { id: 1, name: 'Test Bucket', plantId: 0, plant: null },
     ])
 
     const { container } = render(await ReadingsPage())
