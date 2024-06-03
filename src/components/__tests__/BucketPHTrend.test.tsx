@@ -14,7 +14,7 @@ const readings = [
   {
     id: 1,
     bucketId: 1,
-    createdAt: new Date(2024, 5, 2, 9, 48, 25),
+    createdAt: new Date(Date.UTC(2024, 5, 2, 9, 48, 25)),
     ph: 6.3,
     ec: 1500,
     tds: 811,
