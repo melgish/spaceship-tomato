@@ -17,7 +17,7 @@ const data = {
     plantId: 1,
   },
   bucketId: 1,
-  createdAt: new Date(2024, 5, 13, 6, 12, 34, 45),
+  createdAt: new Date(Date.UTC(2024, 5, 13, 6, 12, 34, 45)),
   ec: 1234,
   ph: 6.5,
   tds: 805,

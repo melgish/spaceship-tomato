@@ -7,9 +7,8 @@ type Reporter = 'lcovonly' | 'html' | 'cobertura' | 'text-summary';
 let reporter: Reporter[] = ['text-summary', 'html'];
 if (process.env.CI) {
   // Include CI reports
-  reporter = ['lcovonly', 'cobertura'];
+  reporter = ['lcovonly', 'cobertura']
 }
-
 export default defineConfig({
   plugins: [react()],
   test: {
@@ -19,11 +18,12 @@ export default defineConfig({
       exclude: ['**/__mocks__/*', '**/__tests__/*'],
     },
     environment: 'jsdom',
-    setupFiles: ['src/setupTests.ts'],
+    globalSetup: ['src/__tests__/globalSetup.ts'],
+    setupFiles: ['src/__tests__/setupTests.ts'],
   },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),
     },
   },
-});
+})
