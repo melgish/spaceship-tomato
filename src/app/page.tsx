@@ -1,5 +1,6 @@
 import { findBuckets } from '@/actions/findBuckets'
 import BucketPHTrend from '@/components/BucketPHTrend'
+import BucketTrend from '@/components/BucketTrend'
 
 export const dynamic = 'force-dynamic'
 
@@ -17,7 +18,12 @@ export default async function Home() {
             <div>
               Bucket: {b.name} {b.plant?.name}
             </div>
-            <BucketPHTrend bucket={b} />
+            <div>PH</div>
+            <BucketTrend xKey="ph" bucket={b} yMin={5} yMax={8} />
+            <div>EC</div>
+            <BucketTrend xKey="ec" bucket={b} yMin={750} yMax={2000} />
+            <div>TDS</div>
+            <BucketTrend xKey="tds" bucket={b} yMin={500} yMax={1000} />
           </div>
         ))}
       </div>
