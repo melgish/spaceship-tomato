@@ -1,7 +1,7 @@
 'use client'
 import type { Buckets } from '@/actions/findBuckets'
 
-import { useId } from 'react'
+import { useId, useRef } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import ErrorMessage from '@/components/ErrorMessage'
@@ -22,10 +22,16 @@ type Props = Readonly<{
 }>
 
 export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
+  const refSelectDiv = useRef<HTMLDivElement>(null)
   const id = useId()
 
   const clear = () => {
     reset({ ...defaultValues, bucketId })
+    // Set focus back to the select element.
+    // react-hook-form doesn't forward focusVisible option when calling it's
+    // setFocus. It's easier here to start 1 level up and dig down.
+    const el = refSelectDiv.current?.querySelector('select')
+    el?.focus({ focusVisible: true } as FocusOptions)
   }
 
   const save = async (data: AddReading) => {
@@ -42,14 +48,15 @@ export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
 
   return (
     <form className="flex gap-x-3" noValidate onSubmit={handleSubmit(save)}>
-      <div className="required field">
+      <div className="required field" ref={refSelectDiv}>
         <label htmlFor={`${id}-bucketId`}>Bucket</label>
         <select
           {...register('bucketId')}
+          autoFocus
           className="py-1.5"
+          disabled={bucketId > 0}
           style={{ width: '20ch' }}
           id={`${id}-bucketId`}
-          disabled={bucketId > 0}
         >
           <option value={0}>None</option>
           {buckets.map((p: IdAndName) => (
