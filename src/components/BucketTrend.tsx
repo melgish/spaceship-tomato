@@ -29,7 +29,7 @@ export default function BucketTrend({ bucket, ticks = 10, xKey, yMin, yMax }: Pr
 
   // X scale changes based on measurement dates.
   // Generate x axis ticks. [label, value]
-  const xDomain = d3.extent(data, (d) => d.createdAt!) as [Date, Date]
+  const xDomain = d3.extent(data, (d) => d.createdAt!) as Date[]
   const xScale = d3.scaleTime().domain(xDomain).range([0, width])
   const xScale1 = (d: Date) => +xScale(d).toFixed(1)
   const timeFormat = xScale.tickFormat(8, '%b %d')
