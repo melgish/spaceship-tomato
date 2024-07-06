@@ -4,13 +4,12 @@ import * as d3 from 'd3'
 type Reading = Required<Bucket['readings'][number]>
 type Props = Readonly<{
   bucket: Bucket
-  ticks?: number
   xKey: 'ph' | 'ec' | 'tds'
   yMin: number
   yMax: number
 }>
 
-export default function BucketTrend({ bucket, ticks = 10, xKey, yMin, yMax }: Props) {
+export default function BucketTrend({ bucket, xKey, yMin, yMax }: Props) {
   const precision = xKey === 'ph' ? 1 : 0
   const data = bucket.readings
 
