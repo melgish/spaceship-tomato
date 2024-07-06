@@ -20,7 +20,9 @@ export default function BucketTrend({ bucket, ticks = 10, xKey, yMin, yMax }: Pr
 
   // Y scale based on fixed PH range
   // Generate y axis ticks. [label, value]
-  const yDomain = [yMin, yMax]
+  let yDomain = d3.extent(data, (d) => d[xKey]) as number[]
+  // yMin and yMax are only suggestions.
+  yDomain = d3.extent([...yDomain, yMin, yMax]) as number[]
   const yScale = d3.scaleLinear().domain(yDomain).range([height, 0])
   const yScale1 = (d: number) => +yScale(d).toFixed(1)
   const yTicks = yScale.ticks(9).map((d) => [d.toFixed(precision), yScale1(d)])
