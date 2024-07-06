@@ -37,16 +37,16 @@ exports[`should display the supplied reading 1`] = `
       6.5
     </div>
     <div>
-      TDS
-    </div>
-    <div>
-      805
-    </div>
-    <div>
       EC
     </div>
     <div>
       1234
+    </div>
+    <div>
+      TDS
+    </div>
+    <div>
+      805
     </div>
     <div />
   </div>
