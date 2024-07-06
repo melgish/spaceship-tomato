@@ -1,5 +1,4 @@
 import { findBuckets } from '@/actions/findBuckets'
-import BucketPHTrend from '@/components/BucketPHTrend'
 import BucketTrend from '@/components/BucketTrend'
 
 export const dynamic = 'force-dynamic'
