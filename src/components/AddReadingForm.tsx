@@ -13,20 +13,33 @@ import { type AddReading, addReadingSchema } from '@/schemas/addReading.schema'
 import type { IdAndName } from '@/lib/idAndName'
 import { notify } from '@/lib/notify'
 
-const defaultValues: AddReading = { bucketId: -1, ec: 0, ph: 0, tds: 0 }
+const defaultValues: AddReading = { bucketId: 0, ec: 0, ph: 0, tds: 0 }
 const resolver = zodResolver(addReadingSchema)
 
 type Props = Readonly<{
   buckets: Buckets
-  bucketId?: number
 }>
 
-export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
+function findNextBucketId(buckets: Buckets, bucketId: number) {
+  if (bucketId > 0) {
+    const index = buckets.findIndex((b) => b.id === bucketId)
+    return buckets[index + 1]?.id ?? 0
+  }
+  return 0
+}
+
+export default function AddReadingForm({ buckets }: Props) {
   const refSelectDiv = useRef<HTMLDivElement>(null)
   const id = useId()
 
-  const clear = () => {
+  const clear = (moveNext: boolean) => {
+    let bucketId = 0
+    if (moveNext) {
+      // Attempt to advance to next bucket in the list.
+      bucketId = findNextBucketId(buckets, Number(getValues().bucketId))
+    }
     reset({ ...defaultValues, bucketId })
+
     // Set focus back to the select element.
     // react-hook-form doesn't forward focusVisible option when calling it's
     // setFocus. It's easier here to start 1 level up and dig down.
@@ -36,12 +49,12 @@ export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
 
   const save = async (data: AddReading) => {
     if (notify(await addReading(data))) {
-      clear()
+      clear(true)
     }
   }
 
-  const { handleSubmit, formState, register, reset } = useForm<AddReading>({
-    defaultValues: { ...defaultValues, bucketId },
+  const { getValues, handleSubmit, formState, register, reset } = useForm<AddReading>({
+    defaultValues: { ...defaultValues },
     resolver,
     shouldFocusError: true,
   })
@@ -54,7 +67,6 @@ export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
           {...register('bucketId')}
           autoFocus
           className="py-1.5"
-          disabled={bucketId > 0}
           style={{ width: '20ch' }}
           id={`${id}-bucketId`}
         >
@@ -118,7 +130,7 @@ export default function AddReadingForm({ buckets, bucketId = 0 }: Props) {
 
       <div className="flex items-center gap-x-2">
         <SubmitButton />
-        <ResetButton onClick={clear} />
+        <ResetButton onClick={() => clear(false)} />
       </div>
     </form>
   )
