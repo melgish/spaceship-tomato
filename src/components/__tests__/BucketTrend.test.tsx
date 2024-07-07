@@ -1,12 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { render } from '@testing-library/react'
-import BucketPHTrend from '../BucketPHTrend'
+import BucketTrend from '../BucketTrend'
 
 const bucket = {
   id: 1,
   name: 'Test Bucket',
-  plant: { id: 1, name: 'Test Plant', minPH: 6.1, maxPH: 7.0 },
-  plantId: 1,
+  plant: null,
+  plantId: 0,
   readings: [],
 }
 
@@ -23,7 +23,9 @@ const readings = [
 
 describe('When bucket has no readings', () => {
   it('should render', () => {
-    const { container } = render(<BucketPHTrend bucket={bucket} />)
+    const { container } = render(
+      <BucketTrend bucket={bucket} xKey="ec" yMin={750} yMax={2000} />,
+    )
 
     expect(container).toMatchSnapshot()
   })
@@ -31,7 +33,9 @@ describe('When bucket has no readings', () => {
 
 describe('When bucket has readings', () => {
   it('should render', () => {
-    const { container } = render(<BucketPHTrend bucket={{ ...bucket, readings }} />)
+    const { container } = render(
+      <BucketTrend bucket={{ ...bucket, readings }} xKey="ec" yMin={750} yMax={2000} />,
+    )
 
     expect(container).toMatchSnapshot()
   })

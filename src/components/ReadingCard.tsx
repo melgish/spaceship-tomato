@@ -17,10 +17,10 @@ export default function ReadingCard(row: Props) {
       <div>{plant?.name}</div>
       <div>PH</div>
       <div>{row.ph.toFixed(1)}</div>
-      <div>TDS</div>
-      <div>{row.tds.toFixed(0)}</div>
       <div>EC</div>
       <div>{row.ec.toFixed(0)}</div>
+      <div>TDS</div>
+      <div>{row.tds.toFixed(0)}</div>
       <div />
     </div>
   )

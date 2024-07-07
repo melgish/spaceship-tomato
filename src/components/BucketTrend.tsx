@@ -4,25 +4,31 @@ import * as d3 from 'd3'
 type Reading = Required<Bucket['readings'][number]>
 type Props = Readonly<{
   bucket: Bucket
+  xKey: 'ph' | 'ec' | 'tds'
+  yMin: number
+  yMax: number
 }>
 
-export default function BucketPHTrend({ bucket }: Props) {
+export default function BucketTrend({ bucket, xKey, yMin, yMax }: Props) {
+  const precision = xKey === 'ph' ? 1 : 0
   const data = bucket.readings
 
   const width = 300
   const height = 120
-  const margin = { top: 24, right: 12, bottom: 12, left: 36 }
+  const margin = { top: 24, right: 12, bottom: 12, left: 32 }
 
   // Y scale based on fixed PH range
   // Generate y axis ticks. [label, value]
-  const yDomain = [5, 8]
+  let yDomain = d3.extent(data, (d) => d[xKey]) as number[]
+  // yMin and yMax are only suggestions.
+  yDomain = d3.extent([...yDomain, yMin, yMax]) as number[]
   const yScale = d3.scaleLinear().domain(yDomain).range([height, 0])
   const yScale1 = (d: number) => +yScale(d).toFixed(1)
-  const yTicks = yScale.ticks(9).map((d) => [d.toFixed(1), yScale1(d)])
+  const yTicks = yScale.ticks(9).map((d) => [d.toFixed(precision), yScale1(d)])
 
   // X scale changes based on measurement dates.
   // Generate x axis ticks. [label, value]
-  const xDomain = d3.extent(data, (d) => d.createdAt!) as [Date, Date]
+  const xDomain = d3.extent(data, (d) => d.createdAt!) as Date[]
   const xScale = d3.scaleTime().domain(xDomain).range([0, width])
   const xScale1 = (d: Date) => +xScale(d).toFixed(1)
   const timeFormat = xScale.tickFormat(8, '%b %d')
@@ -31,10 +37,10 @@ export default function BucketPHTrend({ bucket }: Props) {
   const line = d3
     .line<Reading>()
     .x((d) => xScale1(d.createdAt))
-    .y((d) => yScale1(d.ph))
+    .y((d) => yScale1(d[xKey]))
 
   let r = null
-  if (bucket.plant) {
+  if (xKey === 'ph' && bucket.plant) {
     // Calculate range bands based on plant min/max PH
     r = {
       max0: yScale1(bucket.plant.maxPH + 0.5),
@@ -86,7 +92,7 @@ export default function BucketPHTrend({ bucket }: Props) {
         <g className="data" stroke="forestgreen" fill="forestgreen">
           <path d={line(data)!} fill="none" strokeWidth={2} />
           {data.map((d) => (
-            <circle cx={xScale1(d.createdAt)} cy={yScale1(d.ph)} key={d.id} r={4} />
+            <circle cx={xScale1(d.createdAt)} cy={yScale1(d[xKey])} key={d.id} r={4} />
           ))}
         </g>
         {data.length === 0 && (
